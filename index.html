@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager - To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">My Tasks</h1>
+            <button type="button" id="theme-toggle-btn" class="btn btn-theme" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <span id="theme-toggle-icon">🌙</span>
+            </button>
+        </header>
+
+        <section class="input-section">
+            <form class="task-form">
+                <div class="task-form-fields">
+                    <input type="text" id="task-input" class="task-input" placeholder="What needs to be done?"
+                        autocomplete="off" />
+                    <textarea id="task-description-input" class="task-description-input" placeholder="Add a description (optional)" rows="2"></textarea>
+                </div>
+                <button type="submit" id="add-task-btn" class="btn btn-primary">
+                    Add
+                </button>
+            </form>
+        </section>
+
+        <section class="filters-section" id="filter">
+            <button id="filter-all" class="btn btn-filter active">All</button>
+            <button id="filter-active" class="btn btn-filter">Active</button>
+            <button id="filter-completed" class="btn btn-filter">Completed</button>
+        </section>
+
+        <section class="task-list-section">
+            <ul id="task-list" class="task-list">
+                <!-- Example Task 1: Active -->
+                <li class="task-item">
+                    <div class="task-content">
+                        <input type="checkbox" id="task-1" class="task-checkbox" />
+                        <label for="task-1" class="task-label">Complete the project documentation</label>
+                    </div>
+                    <div class="task-actions">
+                        <button type="button" class="btn btn-edit" title="Edit task">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-delete" title="Delete task">
+                            Delete
+                        </button>
+                    </div>
+                    <div class="task-description">Write the README and API docs before the release.</div>
+                </li>
+
+                <!-- Example Task 2: Active -->
+                <li class="task-item">
+                    <div class="task-content">
+                        <input type="checkbox" id="task-2" class="task-checkbox" />
+                        <label for="task-2" class="task-label">Review code changes</label>
+                    </div>
+                    <div class="task-actions">
+                        <button type="button" class="btn btn-edit" title="Edit task">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-delete" title="Delete task">
+                            Delete
+                        </button>
+                    </div>
+                    <div class="task-description"></div>
+                </li>
+
+                <!-- Example Task 3: Completed -->
+                <li class="task-item completed">
+                    <div class="task-content">
+                        <input type="checkbox" id="task-3" class="task-checkbox" checked />
+                        <label for="task-3" class="task-label">Set up development environment</label>
+                    </div>
+                    <div class="task-actions">
+                        <button type="button" class="btn btn-edit" title="Edit task">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-delete" title="Delete task">
+                            Delete
+                        </button>
+                    </div>
+                    <div class="task-description"></div>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="app-footer">
+            <p id="task-count" class="task-count"> </p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
